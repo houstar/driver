@@ -8,8 +8,7 @@ KDIR := /home/houstar/GitRepo/driver-ok6410-3.9/linux
 all:
 	make -C $(KDIR) M=$(PWD) modules
 install:
-	cp hello.ko /srv/nfs/ok6410/lib/modules/3.9.0-rc5+
+	cp hello.ko /srv/nfs/ok6410/lib/modules/3.9.0-rc6+
 clean:
-	rm -f *.ko *.o *.mod.o *.mod.c *.symvers modules*
-
+	make -C $(KDIR) M=$(PWD) clean
 endif
